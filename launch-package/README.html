@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README.md</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">README.md</h1>
+</header>
+<h1 id="course-launch-package--read-this-first">Course Launch Package —
+Read this first</h1>
+<p>This folder is everything you need to launch <strong>AI Mastery: From
+Slop to Shipped</strong> as a paid course with a free lead-magnet funnel
+feeding it. Built on top of the 56-page Practice Manual and Practice Kit
+that already live one folder up.</p>
+<h2 id="whats-in-the-box">What's in the box</h2>
+<pre><code>Course_Launch_Package/
+├── README.md                          ← you are here
+├── STRATEGY.md                        ← the funnel + tier breakdown
+│
+├── 01_Lead_Magnet/                    ← the free 10-page PDF
+│    ├── AI_Mastery_Starter_Guide.docx
+│    └── AI_Mastery_Starter_Guide.pdf  ← attach this to email 0
+│
+├── 02_Landing_Page/                   ← single-file landing page
+│    └── index.html                    ← deploy to Netlify; point a domain at it
+│
+├── 03_Email_Sequence/                 ← 5-email nurture, ready to import
+│    ├── README.md                     ← variables to find-and-replace
+│    ├── 00_day0_deliver.md            (instant)
+│    ├── 01_day2_value.md              (+2d)
+│    ├── 02_day4_case.md               (+4d)
+│    ├── 03_day6_softpitch.md          (+6d)
+│    └── 04_day9_hardpitch.md          (+9d)
+│
+├── 04_Curriculum_and_Pricing/         ← public-facing syllabus + tiers
+│    ├── Course_Syllabus.docx
+│    └── Course_Syllabus.pdf
+│
+└── 05_Sales_Assets/                   ← reusable copy snippets
+     ├── headlines.md                  ← page heroes, CTAs
+     ├── tweet_threads.md              ← 3 pre-launch threads
+     └── ad_copy.md                    ← Meta, Google, Reddit</code></pre>
+<p>Plus, sitting one folder up:</p>
+<pre><code>../AI_Mastery_Practice_Manual.docx     ← the 56-page paid product
+../AI_Mastery_Practice_Manual.pdf
+../AI_Mastery_Practice_Kit/            ← the drop-in Practice Kit</code></pre>
+<h2 id="a-60-minute-go-live-checklist">A 60-minute "go-live"
+checklist</h2>
+<p>If you wanted to launch literally today, this is the path.</p>
+<ol type="1">
+<li><strong>Buy a domain</strong> on Cloudflare or Porkbun (~$12/year).
+Anything you like — <code>aimastery.com</code>,
+<code>slop-to-shipped.com</code>, <code>[yourname].ai</code>.</li>
+<li><strong>Create a Netlify account.</strong> Drop
+<code>02_Landing_Page/index.html</code> into
+<code>netlify.com/drop</code>. Point your domain at the resulting URL.
+Done — your landing page is live with HTTPS in 5 minutes.</li>
+<li><strong>Create a Resend (or MailerLite / ConvertKit)
+account.</strong> Verify your sending domain (SPF + DKIM via your
+DNS).</li>
+<li><strong>Import the email sequence.</strong> Each <code>.md</code>
+file is frontmatter + body — every modern ESP imports this format. Set
+the delays to match the frontmatter <code>delay_minutes</code>. Trigger:
+contact added to list <code>ai-mastery-leadmagnet</code>.</li>
+<li><strong>Wire the opt-in.</strong> Replace the
+<code>submitOptin</code> JS in <code>index.html</code> with a real POST
+to your ESP's form endpoint. Resend's API takes 4 lines.</li>
+<li><strong>Upload the lead magnet.</strong> Host
+<code>AI_Mastery_Starter_Guide.pdf</code> on Netlify (or anywhere with a
+stable URL). Update the link in <code>00_day0_deliver.md</code> to point
+at it.</li>
+<li><strong>Find-and-replace placeholders</strong> across the package:
+<ul>
+<li><code>aimastery.example.com</code> → your real domain</li>
+<li><code>hi@aimastery.example.com</code> → your real from address</li>
+<li><code>{{first_name}}</code> and <code>{{sender_name}}</code> → your
+ESP's syntax</li>
+<li><code>STARTER25</code> → your real promo code (or remove)</li>
+<li><code>Aman</code> and <code>$4,200</code> in
+<code>02_day4_case.md</code> → a real student/testimonial, or
+<strong>remove the case study entirely</strong> if you don't have one
+(do not fabricate)</li>
+</ul></li>
+<li><strong>Set up checkout.</strong> Stripe Payment Links for Starter
+(<span
+class="math inline">79)<em>a</em><em>n</em><em>d</em><em>P</em><em>r</em><em>o</em>(</span>249).
+Cohort goes through an application form (Tally / Typeform) for the first
+few cohorts.</li>
+<li><strong>Test the funnel end-to-end</strong> with a fresh email
+address. Opt in. Read every email on mobile and desktop. Click every
+link. Buy your own product. Refund yourself.</li>
+<li><strong>Launch.</strong> Day 1 of the 21-day playbook in
+<code>STRATEGY.md</code>. Post Tweet Thread 1 from
+<code>05_Sales_Assets/tweet_threads.md</code>.</li>
+</ol>
+<h2 id="what-this-package-will-not-do-for-you">What this package will
+not do for you</h2>
+<ul>
+<li><strong>It will not write a real testimonial.</strong> Replace
+placeholder student names and numbers before going live. The penalty for
+making one up is worse than the upside of having one.</li>
+<li><strong>It will not buy traffic.</strong> The launch playbook
+assumes you have ~50–500 warm contacts somewhere (newsletter, Twitter,
+LinkedIn) to seed the first wave. Cold ads should come <em>after</em>
+the first cohort sells out.</li>
+<li><strong>It will not maintain itself.</strong> Refresh the manual
+every quarter, update the email-series links, refresh the landing page
+testimonials. Stale launch packages convert worse than honest ones.</li>
+</ul>
+<h2 id="the-honest-version-of-this-readme">The honest version of this
+README</h2>
+<p>Most "course launch packages" you'll find online assume you have
+nothing real underneath them — the funnel exists to sell air. This one
+assumes you have the actual 56-page Practice Manual and Practice Kit in
+the parent folder, because <em>those are the product</em>. The funnel
+exists to put the product in front of people who would benefit from
+it.</p>
+<p>If those two assets aren't excellent — if you haven't read the
+manual, used the Kit, and felt the system click yourself — the funnel
+will sell, and your first cohort will refund. Read the manual first.
+Then launch.</p>
+<p>— Built using exactly the workflow the course teaches.</p>
+<a class="back" href="javascript:history.back()">&larr; back</a></body>
+</html>

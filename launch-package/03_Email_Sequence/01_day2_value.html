@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>01_day2_value.md</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">01_day2_value.md</h1>
+</header>
+<p>Hi {{first_name}},</p>
+<p>Quick story.</p>
+<p>A founder I was helping last month was on her seventh attempt at
+getting Claude to write a tweet that sounded like her. Each draft was
+worse than the last.</p>
+<p>Her prompts were getting <em>longer</em>. The output was getting
+<em>longer too</em> — and worse: more generic, more hedge-y, more "the
+average of LinkedIn."</p>
+<p>She had it backwards. Here's the law:</p>
+<blockquote>
+<p><strong>The longer the prompt, the SHORTER the output. The shorter
+the prompt, the longer the output.</strong></p>
+</blockquote>
+<p>Why? Because a long, structured prompt <em>constrains</em> the model.
+It tells it exactly what role to play, exactly what process to follow,
+exactly what format to produce. There's nowhere to wander.</p>
+<p>A short prompt is a hand-wave. The model has to guess at all of
+those. It guesses by producing more text — covering its bases.</p>
+<p>Here's the structure of a real production prompt — same one I use to
+write tweets in my own voice:</p>
+<pre><code>You are an elite ghostwriter studying the writing of the author whose voice
+is captured in the attached files. Your job has two phases.
+
+PHASE 1 — silently build a voice profile with these sections:
+  1. Voice signature (5 adjectives)
+  2. Sentence rhythm (avg words/sentence; use of fragments and em-dashes)
+  3. Hook patterns (5–10 opening structures the author repeats)
+  4. Closer patterns
+  5. Forbidden moves (things this author never does)
+  6. Template library (8–12 reusable structural templates)
+Do not show the profile yet. Hold it.
+
+PHASE 2 — generate.
+Topic: &lt;&lt;your idea here&gt;&gt;
+Number of drafts: 4.
+Constraints:
+  - Each draft uses a different template from the library.
+  - Each draft is on-topic, not generic motivation.
+  - No emoji. No hashtags. No &quot;in conclusion&quot; energy.
+  - Match the median tweet length of the author&#39;s data.
+
+PHASE 3 — return format.
+For each draft:
+  DRAFT N — template: &lt;name&gt;
+  &lt;the post&gt;
+
+After all drafts, output a one-paragraph Voice Audit — brutal.</code></pre>
+<p>Notice how every word does work. Role. Phases. Constraints. Format.
+The model has nowhere to drift.</p>
+<p><strong>Try it today.</strong> Drop that prompt into a fresh Claude
+chat with your business_context.md and 50 of your best past posts
+attached. Ask for tweets on a topic you actually want to publish
+about.</p>
+<p>Compare to whatever short prompt you'd normally use.</p>
+<p>Two days from now I'll show you what one of my students (Aman, runs
+an HVAC ops agency) shipped in his first week using exactly this
+template — including the surprising place his AI-written content landed
+in his sales calls.</p>
+<p>Talk soon, — {{sender_name}}</p>
+<p>P.S. If you didn't do the page-6 experiment in the starter guide yet,
+do it before this prompt. The contrast is what makes it click.</p>
+<a class="back" href="javascript:history.back()">&larr; back</a></body>
+</html>

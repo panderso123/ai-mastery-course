@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README.md</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">README.md</h1>
+</header>
+<h1 id="email-nurture-sequence--readme">Email Nurture Sequence —
+README</h1>
+<p>A 5-email sequence that runs on opt-in to the lead magnet. Designed
+for any modern ESP (Resend, MailerLite, ConvertKit, Beehiiv, Substack —
+all import markdown with frontmatter).</p>
+<h2 id="the-cadence">The cadence</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>File</th>
+<th>Day</th>
+<th>Job</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>00_day0_deliver.md</code></td>
+<td>0 (instant)</td>
+<td>Deliver the PDF + set the cadence</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>01_day2_value.md</code></td>
+<td>+2 days</td>
+<td>Pure value: the prompt-length law + production prompt</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>02_day4_case.md</code></td>
+<td>+4 days</td>
+<td>Case study: real student, real numbers</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>03_day6_softpitch.md</code></td>
+<td>+6 days</td>
+<td>Introduce the product + STARTER25 code</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>04_day9_hardpitch.md</code></td>
+<td>+9 days</td>
+<td>Last-call urgency, honest direct ask</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-to-use">How to use</h2>
+<ol type="1">
+<li><strong>Set up automation.</strong> In your ESP, create a list
+<code>ai-mastery-leadmagnet</code> and an automation triggered by adding
+a contact to that list.</li>
+<li><strong>Map the delays.</strong> Each email's
+<code>delay_minutes</code> frontmatter is the offset from the trigger.
+(0 / 2880 / 5760 / 8640 / 12960.)</li>
+<li><strong>Configure merge tags.</strong> Replace
+<code>{{first_name}}</code> and <code>{{sender_name}}</code> with your
+ESP's syntax.</li>
+<li><strong>Set the from address.</strong> Update
+<code>from_email</code> and verify the sending domain.</li>
+<li><strong>Test.</strong> Send all 5 to yourself first. Read on
+mobile.</li>
+</ol>
+<h2 id="variables-to-find-and-replace-before-going-live">Variables to
+find-and-replace before going live</h2>
+<ul>
+<li><code>{{first_name}}</code> — first name merge tag</li>
+<li><code>{{sender_name}}</code> — your name (e.g., "Peter")</li>
+<li><code>aimastery.example.com</code> — your real domain</li>
+<li><code>hi@aimastery.example.com</code> — your real from address</li>
+<li><code>STARTER25</code> — your real promo code (or remove if not
+running one)</li>
+</ul>
+<h2 id="compliance-notes">Compliance notes</h2>
+<ul>
+<li>Every email needs a one-click unsubscribe link (most ESPs add this
+automatically).</li>
+<li>The from address must match a verified sending domain (SPF + DKIM +
+DMARC).</li>
+<li>Day 4's case study mentions specific numbers — replace "Aman" and
+the dollar figure with your own real student or testimonial. Do not ship
+a fabricated case study; CAN-SPAM and ASA rules treat that as
+deceptive.</li>
+</ul>
+<h2 id="what-this-sequence-is-not-optimized-for">What this sequence is
+NOT optimized for</h2>
+<ul>
+<li>B2B enterprise sales cycles (those need a 14–30 email sequence with
+more proof).</li>
+<li>Free-trial-to-paid conversion (different motion entirely; use a
+separate trial drip).</li>
+<li>Webinar or live launch sequences (those are 10+ emails over 2 weeks
+with countdown timers).</li>
+</ul>
+<p>This is a <strong>lead-magnet → low-ticket digital product</strong>
+sequence, optimized for the "impulse-considered-purchase" tier (<span
+class="math inline">79–</span>999 one-time).</p>
+<a class="back" href="javascript:history.back()">&larr; back</a></body>
+</html>
