@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Mastery — From Slop to Shipped</title>
+<meta name="description" content="The system that takes you from generic AI output to on-voice content and shipped SaaS in 30 days. Free 10-page starter guide.">
+<meta property="og:title" content="AI Mastery — From Slop to Shipped">
+<meta property="og:description" content="A 4-folder system that makes AI sound like you, plus a complete vibe-coding curriculum.">
+<style>
+  :root{
+    --accent:#2E5BBA; --accent-dark:#1F3F82; --accent-soft:#EEF3FB;
+    --ink:#1A1A1A; --muted:#555; --rule:#D9DEE7; --bg:#fff; --bg-alt:#F7F9FC;
+    --warn-bg:#FDF3E7; --win-bg:#ECF7EE;
+    --max:1100px; --radius:14px;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "SF Mono", "Consolas", "Menlo", monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{font:16px/1.55 var(--font-sans); color:var(--ink); background:var(--bg); -webkit-font-smoothing:antialiased}
+  a{color:var(--accent); text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3,h4{font-family:var(--font-sans); color:var(--accent-dark); line-height:1.15; letter-spacing:-0.01em; margin:0 0 .5em}
+  h1{font-size:clamp(36px,5vw,60px); font-weight:800}
+  h2{font-size:clamp(26px,3.2vw,40px); font-weight:800; margin-top:0}
+  h3{font-size:22px; font-weight:700}
+  h4{font-size:18px; font-weight:700; color:var(--ink)}
+  p{margin:0 0 1em}
+  .container{max-width:var(--max); margin:0 auto; padding:0 24px}
+  .eyebrow{font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:700}
+  .lede{font-size:20px; color:#3A3F4B; max-width:720px}
+  .btn{display:inline-block; padding:14px 22px; background:var(--accent); color:#fff; border-radius:10px; font-weight:700; border:0; cursor:pointer; transition:transform .08s ease, background .15s ease}
+  .btn:hover{background:var(--accent-dark); text-decoration:none; transform:translateY(-1px)}
+  .btn.outline{background:transparent; color:var(--accent); border:1.5px solid var(--accent)}
+  .btn.outline:hover{background:var(--accent-soft)}
+  .btn.lg{padding:18px 28px; font-size:18px}
+  /* Nav */
+  nav.top{position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--rule)}
+  nav.top .container{display:flex; align-items:center; justify-content:space-between; height:60px}
+  .brand{font-weight:800; font-size:18px; color:var(--accent-dark); letter-spacing:-.01em}
+  .brand span{color:var(--accent)}
+  nav.top a.link{margin-left:24px; color:var(--muted); font-weight:500}
+  nav.top a.link:hover{color:var(--ink); text-decoration:none}
+  /* Hero */
+  .hero{padding:80px 0 60px; background:linear-gradient(180deg, #fff 0%, var(--accent-soft) 100%)}
+  .hero .grid{display:grid; grid-template-columns: 1.1fr 1fr; gap:48px; align-items:center}
+  @media (max-width: 900px){.hero .grid{grid-template-columns:1fr; gap:32px}}
+  .hero .pdfcard{background:#fff; border:1px solid var(--rule); border-radius:var(--radius); padding:24px; box-shadow:0 12px 40px rgba(31,63,130,0.08)}
+  .pdfcard .mock{background:linear-gradient(180deg,#fff,#F4F7FC); border:1px solid var(--rule); border-radius:10px; padding:36px 28px; text-align:center; aspect-ratio:8.5/11; display:flex; flex-direction:column; justify-content:center; min-height:380px}
+  .pdfcard .mock .stamp{color:var(--accent); font-size:11px; letter-spacing:.22em; text-transform:uppercase; font-weight:800; margin-bottom:18px}
+  .pdfcard .mock h3.title{color:var(--accent-dark); font-size:34px; margin:0 0 14px; line-height:1.05}
+  .pdfcard .mock .sub{color:var(--muted); font-style:italic; font-size:14px}
+  .pdfcard form{display:grid; gap:10px; margin-top:18px}
+  .pdfcard input[type="email"]{padding:14px 14px; border:1.5px solid var(--rule); border-radius:10px; font:inherit}
+  .pdfcard input[type="email"]:focus{outline:none; border-color:var(--accent)}
+  .pdfcard small{color:var(--muted); font-size:13px}
+  .hero h1 .strike{color:var(--muted); text-decoration:line-through; text-decoration-thickness:2px}
+  .hero ul.bullets{padding:0; margin:24px 0; list-style:none}
+  .hero ul.bullets li{padding-left:28px; position:relative; margin-bottom:10px; color:#2A2F3A}
+  .hero ul.bullets li::before{content:"✓"; position:absolute; left:0; top:0; color:var(--accent); font-weight:800}
+  /* Section */
+  section{padding:80px 0; border-top:1px solid var(--rule)}
+  section.alt{background:var(--bg-alt)}
+  .center{text-align:center}
+  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
+  .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:24px}
+  @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
+  .card{background:#fff; border:1px solid var(--rule); border-radius:var(--radius); padding:28px}
+  .card h3{margin-top:0; color:var(--accent-dark)}
+  .badge{display:inline-block; background:var(--accent-soft); color:var(--accent-dark); padding:4px 10px; border-radius:100px; font-size:12px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; margin-bottom:8px}
+  /* Three-runs comparison */
+  .runs{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:30px}
+  @media (max-width:900px){.runs{grid-template-columns:1fr}}
+  .run{background:#fff; border:1px solid var(--rule); border-radius:12px; padding:22px}
+  .run header{font-size:13px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; font-weight:700}
+  .run h4{color:var(--accent-dark); margin:0 0 12px}
+  .run pre{font:13px/1.55 var(--font-mono); background:#F2F4F8; padding:14px; border-radius:8px; white-space:pre-wrap; margin:0; color:#2A2F3A}
+  .run.win{border-color:var(--accent); box-shadow:0 8px 24px rgba(46,91,186,0.08)}
+  .run.win h4::after{content:" ← your voice"; color:var(--accent); font-size:14px; font-weight:600}
+  /* Curriculum */
+  .module{display:grid; grid-template-columns:64px 1fr; gap:18px; padding:18px 0; border-top:1px solid var(--rule)}
+  .module:first-child{border-top:0; padding-top:0}
+  .module .num{font-family:var(--font-mono); font-size:14px; color:var(--muted)}
+  .module h4{margin:0 0 6px; font-size:18px}
+  .module p{margin:0; color:var(--muted); font-size:15px}
+  .module .meta{font-size:13px; color:var(--accent); font-weight:600; margin-top:6px}
+  /* Pricing */
+  .price-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:36px}
+  @media (max-width:900px){.price-grid{grid-template-columns:1fr}}
+  .price{background:#fff; border:1px solid var(--rule); border-radius:var(--radius); padding:28px; display:flex; flex-direction:column}
+  .price.featured{border-color:var(--accent); box-shadow:0 16px 50px rgba(46,91,186,0.14); transform:translateY(-8px)}
+  .price .tier{font-size:14px; color:var(--accent); font-weight:700; letter-spacing:.08em; text-transform:uppercase}
+  .price .num{font-size:44px; font-weight:800; color:var(--accent-dark); margin:8px 0}
+  .price .num small{font-size:14px; font-weight:500; color:var(--muted)}
+  .price ul{padding-left:18px; margin:18px 0; color:#2A2F3A}
+  .price ul li{margin-bottom:6px}
+  .price .btn{margin-top:auto; text-align:center}
+  .ribbon{display:inline-block; background:var(--accent); color:#fff; padding:4px 12px; border-radius:6px; font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; margin-bottom:8px}
+  /* FAQ */
+  details{background:#fff; border:1px solid var(--rule); border-radius:12px; padding:18px 22px; margin-bottom:12px}
+  details[open]{border-color:var(--accent)}
+  summary{font-weight:700; cursor:pointer; color:var(--accent-dark); list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+"; float:right; color:var(--accent); font-weight:800; font-size:22px; line-height:1}
+  details[open] summary::after{content:"−"}
+  details > p{margin-top:10px; color:#2A2F3A}
+  /* Final CTA */
+  .finalcta{background:linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%); color:#fff; padding:80px 0; text-align:center}
+  .finalcta h2{color:#fff}
+  .finalcta p{color:rgba(255,255,255,0.92); font-size:18px}
+  .finalcta .btn{background:#fff; color:var(--accent-dark)}
+  .finalcta .btn:hover{background:#fff; color:var(--accent)}
+  /* Footer */
+  footer.site{padding:36px 0; color:var(--muted); font-size:14px; text-align:center; border-top:1px solid var(--rule)}
+  footer.site a{color:var(--muted)}
+  /* Quote callouts */
+  .quote{border-left:4px solid var(--accent); padding:14px 18px; background:var(--accent-soft); border-radius:0 10px 10px 0; font-style:italic; color:#2A2F3A; margin:18px 0}
+  .quote cite{display:block; margin-top:8px; font-style:normal; font-size:13px; color:var(--muted)}
+  /* Compare table */
+  table.t{width:100%; border-collapse:collapse; margin-top:18px; font-size:15px}
+  table.t th, table.t td{padding:12px 14px; text-align:left; border-bottom:1px solid var(--rule)}
+  table.t th{background:var(--accent-soft); color:var(--accent-dark); font-weight:700}
+  /* Stats */
+  .stats{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin:36px 0}
+  @media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{text-align:center; padding:18px; background:#fff; border:1px solid var(--rule); border-radius:12px}
+  .stat .n{font-size:34px; font-weight:800; color:var(--accent-dark)}
+  .stat .l{font-size:13px; color:var(--muted); margin-top:4px}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="container">
+    <div class="brand">AI&nbsp;Mastery<span>.</span></div>
+    <div>
+      <a class="link" href="#how">How it works</a>
+      <a class="link" href="#curriculum">Curriculum</a>
+      <a class="link" href="#pricing">Pricing</a>
+      <a class="link" href="#faq">FAQ</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="border-top:0">
+  <div class="container">
+    <div class="grid">
+      <div>
+        <span class="eyebrow">For operators, founders, and builders</span>
+        <h1 style="margin-top:14px">Stop sounding like <span class="strike">ChatGPT</span>.<br>Start sounding like <em style="font-style:italic">you</em>.</h1>
+        <p class="lede">In 30 days you'll publish content that sounds like you wrote it (because, in a way, you did) — and ship a real SaaS app you can actually charge for. Same AI you already use. New system around it.</p>
+        <ul class="bullets">
+          <li>The 4-folder system every prompt feeds into</li>
+          <li>6 production-grade prompt templates</li>
+          <li>3 starter code repos for your first SaaS</li>
+          <li>56-page Practice Manual + Practice Kit</li>
+        </ul>
+        <p style="margin-top:24px">
+          <a class="btn lg" href="#optin">Get the free 10-page guide →</a>
+        </p>
+        <p style="font-size:13px; color:var(--muted); margin-top:8px">No fluff. Unsubscribe anytime. Real exercise on page 6.</p>
+      </div>
+      <div class="pdfcard" id="optin">
+        <div class="mock">
+          <div class="stamp">Free Starter Guide</div>
+          <h3 class="title">The 4-Folder System</h3>
+          <div class="sub">How AI goes from slop to sounding like you</div>
+        </div>
+        <form onsubmit="return submitOptin(event)">
+          <label for="email" style="font-size:14px; font-weight:600">Where should we send the PDF?</label>
+          <input id="email" type="email" placeholder="you@example.com" required>
+          <button class="btn" type="submit">Send me the guide</button>
+          <small>10 pages • PDF • You'll get a 5-day email series too. Easy to opt out.</small>
+        </form>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="n">56</div><div class="l">Page Practice Manual</div></div>
+      <div class="stat"><div class="n">6</div><div class="l">Production-grade prompts</div></div>
+      <div class="stat"><div class="n">4</div><div class="l">Vibe-coded starter projects</div></div>
+      <div class="stat"><div class="n">21</div><div class="l">Day launch playbook</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem" class="alt">
+  <div class="container">
+    <span class="eyebrow">The problem</span>
+    <h2>Your AI output sounds generic. Your model isn't broken — it's <em>starving</em>.</h2>
+    <p class="lede">Most people prompt AI with one line and paste the result. The output is vaguely correct, vaguely on-brand, and entirely forgettable. The internet has a name for this: AI slop.</p>
+    <p>Slop is not a model problem. It's an input problem. The model has nothing to anchor on except its training data — the average of the internet — so it produces the average of the internet back.</p>
+    <div class="quote">AI sounds like the internet because it is trained on the internet. Train it on your own work, and it sounds like your own work.<cite>— the core principle</cite></div>
+    <p>The fix is upstream. The fix is the system around the prompt.</p>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section id="how">
+  <div class="container">
+    <span class="eyebrow">The proof, in 30 seconds</span>
+    <h2>Same prompt. Same model. Three radically different results.</h2>
+    <p class="lede">We asked the same model to "write a tweet about pricing mistakes founders make" three times. The only thing that changed was what we attached.</p>
+
+    <div class="runs">
+      <div class="run">
+        <header>Run A</header>
+        <h4>Prompt only</h4>
+        <pre>"Many founders underprice. Don't leave money on the table. Charge what you're worth! #startup #pricing"</pre>
+      </div>
+      <div class="run">
+        <header>Run B</header>
+        <h4>+ Business context</h4>
+        <pre>"Charging hourly turned my agency into a busy job. The day we switched to monthly retainers, profit per hour 2.5x. Same work. Different invoice."</pre>
+      </div>
+      <div class="run win">
+        <header>Run C</header>
+        <h4>+ 200 past tweets</h4>
+        <pre>"Hourly rates put a ceiling on you. Retainers put a floor under you. Same hours. Different ladder."</pre>
+      </div>
+    </div>
+
+    <p style="margin-top:30px">The model didn't change. The system around it did. Run C uses the 4-folder system you'll learn in the free guide.</p>
+  </div>
+</section>
+
+<!-- THE SYSTEM -->
+<section class="alt">
+  <div class="container">
+    <span class="eyebrow">The system</span>
+    <h2>Three inputs decide every AI output. Most people skip two.</h2>
+    <div class="grid-3" style="margin-top:30px">
+      <div class="card"><span class="badge">1 — The who</span><h3>Business context</h3><p>One file. The single source of truth about who you are, who buys from you, and what you sell. Attach it to every prompt.</p></div>
+      <div class="card"><span class="badge">2 — The past</span><h3>Data</h3><p>Your historical work, organized by output type. Voice, rhythm, and taste live here. The model copies them.</p></div>
+      <div class="card"><span class="badge">3 — The ask</span><h3>Prompt</h3><p>Role, process, constraints, format. Length is the lever most people get wrong: longer prompts → tighter outputs.</p></div>
+    </div>
+    <p style="margin-top:30px"><strong>Skip any one and you get slop. Provide all three and the same model that wrote the slop now writes in your voice.</strong></p>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section id="curriculum">
+  <div class="container">
+    <span class="eyebrow">What's inside</span>
+    <h2>Two ladders. Same foundation.</h2>
+    <p class="lede">Everyone starts with the same 4-folder foundation. Then you choose your ladder: content (publish daily) or vibe coding (ship a SaaS). Most students end up doing both.</p>
+
+    <div class="grid-2" style="margin-top:36px">
+      <div>
+        <h3 style="color:var(--accent)">Ladder A — Content workflows</h3>
+        <div class="module"><div class="num">01</div><div><h4>Foundation</h4><p>The slop problem · 4-folder system · 12-question business context · prompt anatomy.</p><div class="meta">5 lessons · ~3 hrs</div></div></div>
+        <div class="module"><div class="num">02</div><div><h4>Tweet generation loop</h4><p>From idea → 4 drafts → voice audit → publish → measure. Save winners back to the dataset.</p><div class="meta">3 lessons · ~2 hrs</div></div></div>
+        <div class="module"><div class="num">03</div><div><h4>Long-form (YouTube + blog)</h4><p>Style extraction → House Style Guide → on-voice scripts with B-roll cues.</p><div class="meta">3 lessons · ~2.5 hrs</div></div></div>
+        <div class="module"><div class="num">04</div><div><h4>Short-form (Reels / Shorts / TikTok)</h4><p>3-second hook patterns, pattern interrupts at 0:03 and 0:07, on-screen text overlays.</p><div class="meta">2 lessons · ~1.5 hrs</div></div></div>
+        <div class="module"><div class="num">05</div><div><h4>The repurposing engine</h4><p>1 idea → 6 outputs (long-form + 3 shorts + tweet thread + newsletter).</p><div class="meta">2 lessons · ~1 hr</div></div></div>
+      </div>
+      <div>
+        <h3 style="color:var(--accent)">Ladder B — Vibe coding</h3>
+        <div class="module"><div class="num">06</div><div><h4>Setup &amp; mental models</h4><p>Claude Code or Antigravity. How web apps actually work, for non-coders.</p><div class="meta">3 lessons · ~2 hrs</div></div></div>
+        <div class="module"><div class="num">07</div><div><h4>Project 1 — Portfolio site</h4><p>Deploy to a custom domain in 30 minutes. Lighthouse scores 95+.</p><div class="meta">1 lesson · ~1 hr</div></div></div>
+        <div class="module"><div class="num">08</div><div><h4>Project 2 — Client dashboard</h4><p>Auth, two roles, Postgres + RLS, real-time updates, full-stack.</p><div class="meta">5 lessons · ~5 hrs</div></div></div>
+        <div class="module"><div class="num">09</div><div><h4>Project 3 — Lead-gen SaaS</h4><p>Third-party APIs, async jobs, Stripe metered billing. The shape of a real SaaS.</p><div class="meta">6 lessons · ~7 hrs</div></div></div>
+        <div class="module"><div class="num">10</div><div><h4>Production: security, deploy, launch</h4><p>The 80/20 security audit. Pricing, marketing, the 21-day launch playbook.</p><div class="meta">4 lessons · ~3 hrs</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section class="alt">
+  <div class="container">
+    <span class="eyebrow">Who this is for</span>
+    <h2>And — honestly — who it isn't.</h2>
+    <table class="t">
+      <thead><tr><th style="width:50%">A great fit if you…</th><th>Probably not for you if…</th></tr></thead>
+      <tbody>
+        <tr><td>Already use AI weekly but the output sounds generic.</td><td>You want a "magic prompt" that does the thinking for you.</td></tr>
+        <tr><td>Want to publish on-voice content at 5x the speed.</td><td>You're looking for a no-code app builder.</td></tr>
+        <tr><td>Want to ship a SaaS without hiring an engineering team.</td><td>You enjoy hand-typing every line of code.</td></tr>
+        <tr><td>Are willing to spend an afternoon on the foundation.</td><td>You can't commit 20 minutes a day for 30 days.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container center">
+    <span class="eyebrow">Pricing</span>
+    <h2>Pick the depth. Same foundation in all three.</h2>
+    <p class="lede" style="margin-left:auto; margin-right:auto">One-time payment. Lifetime access. Update emails when the manual is revised.</p>
+
+    <div class="price-grid">
+      <div class="price">
+        <span class="tier">Starter</span>
+        <div class="num">$79 <small>one-time</small></div>
+        <p style="color:var(--muted)">For operators who want the playbook.</p>
+        <ul>
+          <li>56-page Practice Manual (PDF + DOCX)</li>
+          <li>Practice Kit folder (drop-in)</li>
+          <li>6 production-grade prompt templates</li>
+          <li>Lifetime updates</li>
+        </ul>
+        <a class="btn outline" href="#optin">Start with the free guide</a>
+      </div>
+      <div class="price featured">
+        <span class="ribbon">Most popular</span>
+        <span class="tier">Pro</span>
+        <div class="num">$249 <small>one-time</small></div>
+        <p style="color:var(--muted)">For builders who want to ship.</p>
+        <ul>
+          <li>Everything in Starter</li>
+          <li>3 starter code repos (portfolio, dashboard, lead-gen SaaS)</li>
+          <li>8 video walkthroughs of the workflow loops</li>
+          <li>Private community Discord</li>
+          <li>Priority email support</li>
+        </ul>
+        <a class="btn" href="#optin">Get the free guide first</a>
+      </div>
+      <div class="price">
+        <span class="tier">Cohort</span>
+        <div class="num">$999 <small>capped 25/cohort</small></div>
+        <p style="color:var(--muted)">For founders ready to launch.</p>
+        <ul>
+          <li>Everything in Pro</li>
+          <li>4-week live cohort</li>
+          <li>4 weekly group office hours</li>
+          <li>1 hot-seat code/launch review</li>
+          <li>Completion certificate</li>
+        </ul>
+        <a class="btn outline" href="#optin">Apply via the email series</a>
+      </div>
+    </div>
+
+    <p style="margin-top:30px; color:var(--muted); font-size:14px">14-day money-back guarantee on Starter and Pro. Cohort: full refund before kickoff, prorated thereafter.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="alt">
+  <div class="container" style="max-width:760px">
+    <span class="eyebrow">FAQ</span>
+    <h2>Common questions</h2>
+    <details><summary>Do I need to know how to code?</summary><p>No. The vibe-coding chapters assume zero programming background. They give you the mental model (web apps in five layers, CRUD as a thinking tool) and then walk you through prompting an AI to write the code while you review and ship.</p></details>
+    <details><summary>Which AI do I need? Claude? ChatGPT? Gemini?</summary><p>Any modern frontier model works for the content side. For coding we recommend Claude Code or Antigravity (Google's IDE that bundles Gemini). The framework is portable — switch tools without rewriting your prompts.</p></details>
+    <details><summary>How long until I see results?</summary><p>The 15-minute experiment in the free guide proves the principle the same day. Most students publish their first on-voice tweets in week 1 and ship the portfolio project in week 2. Lead-gen SaaS-shape projects typically take 3–4 weekends.</p></details>
+    <details><summary>What if I already have an audience and content?</summary><p>You're in the best position. You have data — the most expensive part of the system. The course shows you how to feed it to the model so the model writes in your established voice instead of overriding it.</p></details>
+    <details><summary>Is this just prompt engineering?</summary><p>No. Most courses teach prompts. This one teaches the system around the prompts so output quality compounds over time: business context, organized data, reusable prompt templates, and (in Pro) starter code repos. The prompt is the smallest part.</p></details>
+    <details><summary>What's the refund policy?</summary><p>14 days, no questions, on Starter and Pro. For Cohort: full refund before kickoff; prorated thereafter.</p></details>
+    <details><summary>Will the manual go stale as AI tools change?</summary><p>The principles (4-folder system, business context, data, prompts, security 80/20) are stack-independent. Specific tool screenshots get refreshed in updates — included free for life.</p></details>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="finalcta">
+  <div class="container">
+    <h2>Start with the free guide.</h2>
+    <p>Read it. Try the 15-minute experiment. If the framework clicks, the rest of the course is one click away.</p>
+    <p style="margin-top:24px"><a class="btn lg" href="#optin">Get the free 10-page guide →</a></p>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="container">
+    <p>© AI Mastery · <a href="mailto:hi@aimastery.example.com">hi@aimastery.example.com</a> · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+  </div>
+</footer>
+
+<script>
+  function submitOptin(e){
+    e.preventDefault();
+    var email = document.getElementById("email").value;
+    if(!email) return false;
+    // In production: POST to your ESP (Resend/MailerLite/ConvertKit) endpoint.
+    // For now, simulate success and offer the PDF link.
+    var card = document.querySelector(".pdfcard");
+    card.innerHTML = '<h3 style="color:var(--accent-dark);margin-top:0">Check your inbox.</h3>'
+      + '<p>We just sent the 10-page guide to <strong>' + email.replace(/[<>]/g,'') + '</strong>.</p>'
+      + '<p>If it doesn\'t arrive in 2 minutes, check spam — or download it directly:</p>'
+      + '<p><a class="btn" href="../01_Lead_Magnet/AI_Mastery_Starter_Guide.pdf" target="_blank">Download PDF now →</a></p>'
+      + '<p style="font-size:13px; color:var(--muted); margin-top:18px">A 5-email series will follow. Day 0: deeper dive. Day 9: full course pricing &amp; bonus.</p>';
+    return false;
+  }
+</script>
+</body>
+</html>
